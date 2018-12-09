@@ -1,0 +1,52 @@
+<div class="contaner" style="padding : 5%">
+<form class="form-signUp" [formGroup]="signUpForm">
+  <h1 class="h3 mb-3 font-weight-normal text-center">Sign Up</h1>
+  <label for="uname"></label>
+  <input type="text" 
+    id="uname" 
+    class="form-control" 
+    placeholder="Username"
+    formControlName="uname">
+    <span 
+      *ngIf="!signUpForm.get('uname').valid && signUpForm.get('uname').touched"
+      class="help-block">
+      Please enter a valid username
+  </span>
+  <label for="email"></label>
+    <input
+      type="email"
+      id="email"
+      placeholder="email address"
+      class="form-control"
+      formControlName="email">
+    <span 
+      *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched"
+      class="help-block">
+      Please enter a valid email address
+    </span>
+  <label for="pass"></label>
+  <input type="password" 
+    id="pass" 
+    class="form-control" 
+    placeholder="password"
+    formControlName="pass">
+    <span 
+      *ngIf="!signUpForm.get('pass').valid && signUpForm.get('pass').touched"
+      class="help-block">
+      Enter a password with length of 8 (eg: P123abc@)
+  </span>
+  <label for="confirmPassword"></label>
+  <input type="password" 
+    id="passC" 
+    class="form-control"
+    placeholder="confirm password"
+    formControlName="passC">
+  <button 
+    class="btn btn-lg btn-primary btn-block" 
+    type="submit" 
+    id="button" (click)="register()">
+    Submit</button>
+  <p id="back"><a routerLink="/">Go Back</a></p>
+  <p class="mt-5 mb-3 text-muted">&copy; placeholder</p>
+</form>
+</div>
